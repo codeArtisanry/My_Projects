@@ -168,3 +168,108 @@
   </div>
 </template>
 
+<style scoped>
+* {
+  text-align: center;
+  border: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg-color: #fff;
+}
+
+body,
+button {
+  color: #b91d73;
+  font: 1em;
+}
+
+body {
+  background-color: var(--bg-color);
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+.progress-clock {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  position: relative;
+  text-align: center;
+  width: 16em;
+  height: 16em;
+}
+
+.progress-clock-time-date,
+.progress-clock-time-digit,
+.progress-clock-time-colon,
+.progress-clock-time-ampm {
+  transition: color 0.2s linear;
+
+  /* -webkit-user-select: auto;
+  -moz-user-select: none;
+  user-select: none; */
+}
+
+.progress-clock-time-date,
+.progress-clock-time-digit {
+  background: transparent;
+}
+
+.progress-clock-time-date,
+.progress-clock-time-ampm {
+  grid-column: 1 / 6;
+}
+
+.progress-clock-time-date {
+  font-size: 0.75em;
+  line-height: 1.33;
+}
+
+.progress-clock-time-digit,
+.progress-clock-time-colon {
+  font-size: 2em;
+  font-weight: 400;
+  grid-row: 2;
+}
+
+.progress-clock-time-colon {
+  line-height: 1.275;
+}
+
+.progress-clock-time-ampm {
+  cursor: default;
+  grid-row: 3;
+}
+
+.progress-clock-rings {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.progress-clock-ring {
+  opacity: 0.1;
+}
+
+.progress-clock-ring-fill {
+  transition: opacity 0s 0.3s linear, stroke-dashoffset 0.3s ease-in-out;
+}
+
+.progress-clock-ring-fill-360 {
+  opacity: 0;
+  stroke-dashoffset: 0;
+  transition-duration: 0.3s;
+}
+</style>
+
+<script>
+</script>
